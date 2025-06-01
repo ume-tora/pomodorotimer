@@ -1,4 +1,7 @@
 [build]
   base = "/"
   publish = "/"
-  command = "echo 'Static site deployed!'
+  command = "echo 'Static site deployed!'"
+
+[build.environment]
+  NODE_VERSION = "16"
