@@ -1,3 +1,5 @@
+console.log('script.js loaded');
+
 class PomodoroTimer {
     constructor() {
         this.workTime = 25 * 60; // 25分
@@ -83,5 +85,7 @@ class PomodoroTimer {
     }
 }
 
-// タイマーの初期化
-const timer = new PomodoroTimer();
+document.addEventListener('DOMContentLoaded', () => {
+    // タイマーの初期化
+    const timer = new PomodoroTimer();
+});
