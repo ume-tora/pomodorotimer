@@ -85,7 +85,45 @@ class PomodoroTimer {
     }
 }
 
+// パーティクルアニメーション
+function createParticles() {
+    const particlesContainer = document.createElement('div');
+    particlesContainer.className = 'particles';
+    document.body.insertBefore(particlesContainer, document.body.firstChild);
+
+    const particleCount = 50;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // ランダムなサイズ（5px 〜 15px）
+        const size = Math.random() * 10 + 5;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // ランダムな位置
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.top = `${Math.random() * 100}%`;
+        
+        // ランダムなアニメーションデュレーション（10秒 〜 30秒）
+        const duration = Math.random() * 20 + 10;
+        particle.style.animationDuration = `${duration}s`;
+        
+        // ランダムな透明度
+        particle.style.opacity = Math.random() * 0.3 + 0.1;
+        
+        // ランダムなアニメーションデレイ（0秒 〜 5秒）
+        particle.style.animationDelay = `${Math.random() * 5}s`;
+        
+        particlesContainer.appendChild(particle);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    // パーティクルを生成
+    createParticles();
+    
     // タイマーの初期化
     const timer = new PomodoroTimer();
 });
